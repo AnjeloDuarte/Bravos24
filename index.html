@@ -7,7 +7,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
-    <!-- Font Awesome (iconos oficiales) -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
@@ -451,6 +451,13 @@
             background: #e0a800;
         }
 
+        .plan-card.junior .btn-asociarse.disabled {
+            background: #666;
+            color: #fff;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
         /* ========== NOTICIAS ========== */
         .noticias-grid {
             display: grid;
@@ -754,7 +761,7 @@
                 <a href="http://localhost/SISTEMA%20DE%20GESTION%20DE%20SOCIOS/Socios/registrar.php" class="btn-asociarse">Asociate ahora →</a>
             </div>
 
-            <!-- Socio Junior -->
+            <!-- Socio Junior (sin botón) -->
             <div class="plan-card junior">
                 <div class="categoria">Menores de 18 años</div>
                 <div class="nombre">Socio Junior</div>
@@ -765,7 +772,11 @@
                     <li><i class="fas fa-check-circle"></i> Participación en escuelas deportivas</li>
                     <li><i class="fas fa-check-circle"></i> Carnet de socio junior</li>
                 </ul>
-                <a href="http://localhost/SISTEMA%20DE%20GESTION%20DE%20SOCIOS/Socios/registrar.php" class="btn-asociarse">Asociate ahora →</a>
+                <div style="margin-top: 15px; padding: 12px; background: #fff3cd; border-radius: 8px; font-size: 13px; color: #856404;">
+                    ⚠️ Inscripción con autorización de padres.<br>
+                    <span style="font-size: 12px;">Contactar al club para más información.</span>
+                </div>
+                <a href="#contacto" style="display: inline-block; margin-top: 10px; color: #000; font-weight: 600; text-decoration: underline;">Contactar →</a>
             </div>
         </div>
     </section>
