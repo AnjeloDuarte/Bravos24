@@ -7,7 +7,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
-    <!-- Font Awesome -->
+    <!-- Font Awesome (iconos oficiales) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
@@ -451,64 +451,6 @@
             background: #e0a800;
         }
 
-        .plan-card.junior .btn-asociarse.disabled {
-            background: #666;
-            color: #fff;
-            cursor: not-allowed;
-            opacity: 0.6;
-        }
-
-        /* ========== NOTICIAS ========== */
-        .noticias-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
-
-        .noticia-item {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s;
-        }
-
-        .noticia-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .noticia-item .img-placeholder {
-            height: 160px;
-            background: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            color: #888;
-        }
-
-        .noticia-item .body {
-            padding: 20px;
-        }
-
-        .noticia-item .body h4 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .noticia-item .body p {
-            color: #666;
-            font-size: 14px;
-        }
-
-        .noticia-item .body .fecha {
-            font-size: 12px;
-            color: #999;
-            margin-top: 10px;
-        }
-
         /* ========== PRÓXIMO PARTIDO ========== */
         .proximo-partido {
             background: #000;
@@ -708,7 +650,7 @@
         <a href="#inicio">Inicio</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#socios">Socios</a>
-        <a href="#noticias">Noticias</a>
+        <a href="#proximo">Próximo Partido</a>
         <a href="#contacto">Contacto</a>
 
         <a href="http://localhost/SISTEMA%20DE%20GESTION%20DE%20SOCIOS/Socios/login.php" class="btn-login">🔑 Área de Socio</a>
@@ -741,7 +683,7 @@
         </div>
     </section>
 
-    <!-- ========== SOCIOS (NUEVO DISEÑO) ========== -->
+    <!-- ========== SOCIOS ========== -->
     <section class="section" id="socios" style="background:#f8f9fa; border-radius: 40px 40px 0 0;">
         <h2 class="section-title">Planes de Socios</h2>
         <p class="section-subtitle">Elegí el plan que mejor se adapte a vos y empezá a disfrutar de todos los beneficios.</p>
@@ -761,7 +703,7 @@
                 <a href="http://localhost/SISTEMA%20DE%20GESTION%20DE%20SOCIOS/Socios/registrar.php" class="btn-asociarse">Asociate ahora →</a>
             </div>
 
-            <!-- Socio Junior (sin botón) -->
+            <!-- Socio Junior (sin botón, con mensaje) -->
             <div class="plan-card junior">
                 <div class="categoria">Menores de 18 años</div>
                 <div class="nombre">Socio Junior</div>
@@ -772,6 +714,7 @@
                     <li><i class="fas fa-check-circle"></i> Participación en escuelas deportivas</li>
                     <li><i class="fas fa-check-circle"></i> Carnet de socio junior</li>
                 </ul>
+                <!-- Mensaje en lugar de botón -->
                 <div style="margin-top: 15px; padding: 12px; background: #fff3cd; border-radius: 8px; font-size: 13px; color: #856404;">
                     ⚠️ Inscripción con autorización de padres.<br>
                     <span style="font-size: 12px;">Contactar al club para más información.</span>
@@ -781,44 +724,11 @@
         </div>
     </section>
 
-    <!-- ========== NOTICIAS ========== -->
-    <section class="section" id="noticias">
-        <h2 class="section-title">Noticias</h2>
-        <p class="section-subtitle">Mantente al día con las novedades del club.</p>
-
-        <div class="noticias-grid">
-            <div class="noticia-item">
-                <div class="img-placeholder">📰</div>
-                <div class="body">
-                    <h4>Nuevo torneo de fútbol infantil</h4>
-                    <p>Inscripciones abiertas para las categorías sub-12 y sub-15. ¡Participá!</p>
-                    <div class="fecha">12 de julio de 2026</div>
-                </div>
-            </div>
-            <div class="noticia-item">
-                <div class="img-placeholder">🎉</div>
-                <div class="body">
-                    <h4>Fiesta del socio 2026</h4>
-                    <p>Gran celebración con sorteos, música y actividades para toda la familia.</p>
-                    <div class="fecha">5 de julio de 2026</div>
-                </div>
-            </div>
-            <div class="noticia-item">
-                <div class="img-placeholder">🏆</div>
-                <div class="body">
-                    <h4>Campeones de la liga regional</h4>
-                    <p>Nuestro equipo de vóley femenino se coronó campeón invicto.</p>
-                    <div class="fecha">28 de junio de 2026</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ========== PRÓXIMO PARTIDO ========== -->
     <section class="proximo-partido" id="proximo">
         <div class="icono">⚽</div>
-        <h2>Próximamente</h2>
-        <p>Estamos preparando nuevos desafíos. ¡Pronto más información!</p>
+        <h2>Próximo Partido</h2>
+        <p>Próximamente. Estamos preparando nuevos desafíos. ¡Pronto más información!</p>
     </section>
 
     <!-- ========== CONTACTO (NUEVO DISEÑO ESTILO OLIMPIA) ========== -->
