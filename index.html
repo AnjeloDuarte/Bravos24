@@ -6,7 +6,9 @@
     <title>Club 24 de Septiembre - Bravos del 24</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <!-- Font Awesome (iconos oficiales) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
         * {
@@ -59,22 +61,24 @@
         }
 
         .header .logo h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 20px;
-            font-weight: 900;
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
             color: white;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .header .logo h1 span {
-            color: #aaa;
-            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
             font-size: 12px;
+            color: #aaa;
             display: block;
             letter-spacing: 2px;
+            text-transform: none;
         }
 
-        /* Menú desplegable (hamburguesa) */
         .menu-toggle {
             display: flex;
             flex-direction: column;
@@ -95,16 +99,14 @@
         .menu-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
-
         .menu-toggle.active span:nth-child(2) {
             opacity: 0;
         }
-
         .menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
         }
 
-        /* Menú lateral (desplegable desde la izquierda) */
+        /* ========== MENU LATERAL ========== */
         .nav-menu {
             position: fixed;
             top: 0;
@@ -125,7 +127,8 @@
         }
 
         .nav-menu .nav-label {
-            font-size: 10px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 12px;
             text-transform: uppercase;
             color: #666;
             letter-spacing: 2px;
@@ -142,6 +145,7 @@
             padding: 12px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             transition: color 0.3s, padding-left 0.3s;
+            font-family: 'Roboto', sans-serif;
         }
 
         .nav-menu a:hover {
@@ -187,7 +191,6 @@
             border-color: rgba(255, 255, 255, 0.3);
         }
 
-        /* Overlay para cerrar el menú */
         .overlay {
             position: fixed;
             top: 0;
@@ -215,8 +218,7 @@
             text-align: center;
             padding: 0 20px;
             margin-top: 74px;
-            /* Filtro blanco y negro */
-            filter: grayscale(0%);
+            filter: grayscale(30%);
         }
 
         .hero::before {
@@ -255,28 +257,32 @@
         }
 
         .hero-content h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 56px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 60px;
             font-weight: 900;
             color: white;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            letter-spacing: 3px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .hero-content h1 span {
             display: block;
-            font-size: 24px;
-            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+            font-size: 22px;
+            font-weight: 300;
             color: #ddd;
             letter-spacing: 6px;
             margin-top: 8px;
+            text-transform: none;
         }
 
         .hero-content .info-club {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 17px;
             margin: 20px 0 15px;
             line-height: 1.8;
+            font-weight: 400;
         }
 
         .hero-content .btn-cta {
@@ -289,6 +295,9 @@
             font-size: 16px;
             transition: background 0.3s, transform 0.2s;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero-content .btn-cta:hover {
@@ -304,11 +313,13 @@
         }
 
         .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 36px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 42px;
             font-weight: 800;
             text-align: center;
             margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
         }
 
         .section-subtitle {
@@ -316,6 +327,179 @@
             color: #666;
             font-size: 16px;
             margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* ========== NOSOTROS ========== */
+        #nosotros .texto {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            color: #555;
+            font-size: 16px;
+        }
+
+        /* ========== PLANES SOCIOS ========== */
+        .planes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .plan-card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-top: 6px solid #000;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .plan-card .categoria {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        .plan-card .nombre {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 8px 0 5px;
+        }
+
+        .plan-card .precio {
+            font-family: 'Oswald', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: #000;
+            margin: 10px 0;
+        }
+
+        .plan-card .precio small {
+            font-size: 16px;
+            font-weight: 400;
+            color: #888;
+        }
+
+        .plan-card .beneficios {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+            padding: 0;
+        }
+
+        .plan-card .beneficios li {
+            padding: 6px 0;
+            font-size: 14px;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .plan-card .beneficios li:last-child {
+            border-bottom: none;
+        }
+
+        .plan-card .beneficios li i {
+            margin-right: 10px;
+            color: #000;
+            width: 20px;
+            text-align: center;
+        }
+
+        .plan-card .btn-asociarse {
+            display: inline-block;
+            background: #000;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 10px;
+        }
+
+        .plan-card .btn-asociarse:hover {
+            background: #333;
+            transform: scale(1.03);
+        }
+
+        .plan-card.junior {
+            border-top-color: #ffc107;
+        }
+
+        .plan-card.junior .btn-asociarse {
+            background: #ffc107;
+            color: #000;
+        }
+
+        .plan-card.junior .btn-asociarse:hover {
+            background: #e0a800;
+        }
+
+        /* ========== NOTICIAS ========== */
+        .noticias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .noticia-item {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s;
+        }
+
+        .noticia-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .noticia-item .img-placeholder {
+            height: 160px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #888;
+        }
+
+        .noticia-item .body {
+            padding: 20px;
+        }
+
+        .noticia-item .body h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .noticia-item .body p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .noticia-item .body .fecha {
+            font-size: 12px;
+            color: #999;
+            margin-top: 10px;
         }
 
         /* ========== PRÓXIMO PARTIDO ========== */
@@ -334,10 +518,11 @@
         }
 
         .proximo-partido h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
             font-weight: 800;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .proximo-partido p {
@@ -346,43 +531,70 @@
             margin-top: 10px;
         }
 
-        /* ========== CONTACTO ========== */
-        .contacto-section {
+        /* ========== CONTACTO (estilo Olimpia) ========== */
+        .contacto-olimpia {
             background: #f8f9fa;
             border-radius: 40px;
             padding: 60px 30px;
             margin: 0 20px 40px;
         }
 
-        .contacto-section .grid {
+        .contacto-olimpia .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            max-width: 800px;
+            gap: 40px;
+            max-width: 900px;
             margin: 0 auto;
+        }
+
+        .contacto-olimpia .item {
             text-align: center;
         }
 
-        .contacto-section .grid .item .icon {
-            font-size: 28px;
+        .contacto-olimpia .item .icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .contacto-olimpia .item .titulo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             margin-bottom: 8px;
         }
 
-        .contacto-section .grid .item p {
+        .contacto-olimpia .item p {
             font-size: 14px;
             color: #555;
+            margin: 4px 0;
+            word-break: break-word;
         }
 
-        .contacto-section .grid .item .social a {
-            display: inline-block;
-            margin: 0 8px;
-            font-size: 24px;
+        .contacto-olimpia .item .social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 8px;
+        }
+
+        .contacto-olimpia .item .social a {
             color: #000;
-            transition: transform 0.2s;
+            font-size: 28px;
+            transition: transform 0.2s, color 0.2s;
         }
 
-        .contacto-section .grid .item .social a:hover {
+        .contacto-olimpia .item .social a:hover {
             transform: scale(1.1);
+            color: #333;
+        }
+
+        .contacto-olimpia .item .correo-item {
+            font-size: 14px;
+            color: #000;
+            font-weight: 500;
         }
 
         /* ========== FOOTER ========== */
@@ -395,11 +607,12 @@
         }
 
         .footer .brand {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Oswald', sans-serif;
             font-weight: 700;
             color: white;
             letter-spacing: 1px;
             margin-bottom: 5px;
+            font-size: 18px;
         }
 
         .footer p {
@@ -422,50 +635,46 @@
                 padding: 10px 20px;
                 height: 64px;
             }
-
             .header .logo h1 {
-                font-size: 16px;
+                font-size: 18px;
             }
-
             .hero-content h1 {
-                font-size: 32px;
+                font-size: 36px;
             }
-
             .hero-content h1 span {
                 font-size: 18px;
             }
-
             .section {
                 padding: 40px 20px;
             }
-
             .section-title {
-                font-size: 28px;
+                font-size: 30px;
             }
-
             .proximo-partido {
                 padding: 40px 20px;
                 margin: 0 10px 30px;
             }
-
             .proximo-partido h2 {
-                font-size: 24px;
+                font-size: 26px;
             }
-
-            .contacto-section {
+            .contacto-olimpia {
                 padding: 40px 20px;
                 margin: 0 10px 30px;
             }
-
             .nav-menu {
                 width: 280px;
                 left: -300px;
                 padding: 70px 20px 20px;
             }
-
             .nav-menu a {
                 font-size: 15px;
                 padding: 10px 0;
+            }
+            .plan-card .nombre {
+                font-size: 22px;
+            }
+            .plan-card .precio {
+                font-size: 26px;
             }
         }
     </style>
@@ -496,10 +705,9 @@
         <a href="#contacto">Contacto</a>
 
         <a href="http://localhost/SISTEMA%20DE%20GESTION%20DE%20SOCIOS/Socios/login.php" class="btn-login">🔑 Área de Socio</a>
-        <a href="http://localhost/SISTEMA%20DE%20GESTION%20DE%20SOCIOS/Socios/login.php" class="btn-login-admin">🔐 Acceso Administradores</a>
+        <a href="http://localhost/SISTEMA%20DE%20GESTION%20DE%20SOCIOS/Socios/login.php" class="btn-login-admin">🔐 Acceder</a>
     </nav>
 
-    <!-- Overlay para cerrar menú -->
     <div class="overlay" id="overlay"></div>
 
     <!-- ========== HERO ========== -->
@@ -517,42 +725,48 @@
         </div>
     </section>
 
-    <!-- ========== NOSOTROS (sección vacía o breve) ========== -->
+    <!-- ========== NOSOTROS ========== -->
     <section class="section" id="nosotros">
         <h2 class="section-title">Nosotros</h2>
-        <p class="section-subtitle">Somos el Club 24 de Septiembre, una institución con más de 100 años de historia en Areguá.</p>
-        <div style="max-width:700px; margin:0 auto; text-align:center; color:#555;">
-            <p>Fundado en 1914, el club ha sido cuna de grandes deportistas y un pilar de la comunidad. Nuestro compromiso es formar personas a través del deporte y fomentar los valores de trabajo en equipo, respeto y pasión.</p>
+        <p class="section-subtitle">Más de 100 años de historia en Areguá.</p>
+        <div class="texto">
+            <p>Somos el Club 24 de Septiembre, una institución fundada en 1914 que ha sido cuna de grandes deportistas y un pilar de la comunidad. Nuestro compromiso es formar personas a través del deporte y fomentar los valores de trabajo en equipo, respeto y pasión.</p>
         </div>
     </section>
 
-    <!-- ========== SOCIOS ========== -->
+    <!-- ========== SOCIOS (NUEVO DISEÑO) ========== -->
     <section class="section" id="socios" style="background:#f8f9fa; border-radius: 40px 40px 0 0;">
-        <h2 class="section-title">Hacete Socio</h2>
-        <p class="section-subtitle">Formá parte de la familia Bravos del 24 y disfrutá de todos los beneficios.</p>
+        <h2 class="section-title">Planes de Socios</h2>
+        <p class="section-subtitle">Elegí el plan que mejor se adapte a vos y empezá a disfrutar de todos los beneficios.</p>
 
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:30px; max-width:900px; margin:0 auto;">
-            <div style="background:white; border-radius:16px; padding:30px 20px; text-align:center; box-shadow:0 4px 20px rgba(0,0,0,0.06); border-top:4px solid #000;">
-                <div style="font-size:48px;">⭐</div>
-                <h3 style="font-family:'Montserrat',sans-serif; margin:10px 0;">Socio Activo</h3>
-                <p style="color:#666;">Acceso a todas las instalaciones, eventos y descuentos exclusivos.</p>
-                <p style="margin-top:12px; font-weight:700; color:#000;">100.000 Gs. / año</p>
+        <div class="planes-grid">
+            <!-- Socio Personal -->
+            <div class="plan-card">
+                <div class="categoria">Para mayores de edad</div>
+                <div class="nombre">Socio Personal</div>
+                <div class="precio">Gs. 100.000 <small>/ año</small></div>
+                <ul class="beneficios">
+                    <li><i class="fas fa-check-circle"></i> Entrada libre a todos los partidos de local</li>
+                    <li><i class="fas fa-check-circle"></i> Tu lugar en las gradas asegurado</li>
+                    <li><i class="fas fa-check-circle"></i> Descuentos en comercios adheridos</li>
+                    <li><i class="fas fa-check-circle"></i> Carnet de socio con identificación oficial</li>
+                </ul>
+                <a href="http://localhost/SISTEMA%20DE%20GESTION%20DE%20SOCIOS/Socios/registrar.php" class="btn-asociarse">Asociate ahora →</a>
             </div>
-            <div style="background:white; border-radius:16px; padding:30px 20px; text-align:center; box-shadow:0 4px 20px rgba(0,0,0,0.06); border-top:4px solid #ffc107;">
-                <div style="font-size:48px;">📆</div>
-                <h3 style="font-family:'Montserrat',sans-serif; margin:10px 0;">Cuota Fraccionada</h3>
-                <p style="color:#666;">Paga en 3 cuotas de 35.000 Gs. sin recargos.</p>
-                <p style="margin-top:12px; font-weight:700; color:#000;">35.000 Gs. / cuota</p>
-            </div>
-            <div style="background:white; border-radius:16px; padding:30px 20px; text-align:center; box-shadow:0 4px 20px rgba(0,0,0,0.06); border-top:4px solid #17a2b8;">
-                <div style="font-size:48px;">🏅</div>
-                <h3 style="font-family:'Montserrat',sans-serif; margin:10px 0;">Beneficios</h3>
-                <p style="color:#666;">Descuentos en comercios locales, prioridad en eventos y uso de canchas.</p>
-            </div>
-        </div>
 
-        <div style="text-align:center; margin-top:30px;">
-            <a href="http://localhost/SISTEMA%20DE%20GESTION%20DE%20SOCIOS/Socios/registrar.php" class="btn-cta" style="background:#000; color:white; padding:14px 40px; border-radius:50px; font-weight:700; display:inline-block; box-shadow:0 4px 20px rgba(0,0,0,0.2);">Registrarme ahora →</a>
+            <!-- Socio Junior -->
+            <div class="plan-card junior">
+                <div class="categoria">Menores de 18 años</div>
+                <div class="nombre">Socio Junior</div>
+                <div class="precio">Gs. 50.000 <small>/ año</small></div>
+                <ul class="beneficios">
+                    <li><i class="fas fa-check-circle"></i> Entrada libre a todos los partidos de local</li>
+                    <li><i class="fas fa-check-circle"></i> Lugar en las gradas asegurado</li>
+                    <li><i class="fas fa-check-circle"></i> Participación en escuelas deportivas</li>
+                    <li><i class="fas fa-check-circle"></i> Carnet de socio junior</li>
+                </ul>
+                <a href="http://localhost/SISTEMA%20DE%20GESTION%20DE%20SOCIOS/Socios/registrar.php" class="btn-asociarse">Asociate ahora →</a>
+            </div>
         </div>
     </section>
 
@@ -561,29 +775,29 @@
         <h2 class="section-title">Noticias</h2>
         <p class="section-subtitle">Mantente al día con las novedades del club.</p>
 
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:30px;">
-            <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-                <div style="height:160px; background:#ddd; display:flex; align-items:center; justify-content:center; font-size:40px; color:#888;">📰</div>
-                <div style="padding:20px;">
-                    <h4 style="font-family:'Montserrat',sans-serif;">Nuevo torneo de fútbol infantil</h4>
-                    <p style="color:#666; font-size:14px;">Inscripciones abiertas para las categorías sub-12 y sub-15.</p>
-                    <div style="font-size:12px; color:#999; margin-top:10px;">12 de julio de 2026</div>
+        <div class="noticias-grid">
+            <div class="noticia-item">
+                <div class="img-placeholder">📰</div>
+                <div class="body">
+                    <h4>Nuevo torneo de fútbol infantil</h4>
+                    <p>Inscripciones abiertas para las categorías sub-12 y sub-15. ¡Participá!</p>
+                    <div class="fecha">12 de julio de 2026</div>
                 </div>
             </div>
-            <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-                <div style="height:160px; background:#ddd; display:flex; align-items:center; justify-content:center; font-size:40px; color:#888;">🎉</div>
-                <div style="padding:20px;">
-                    <h4 style="font-family:'Montserrat',sans-serif;">Fiesta del socio 2026</h4>
-                    <p style="color:#666; font-size:14px;">Gran celebración con sorteos, música y actividades.</p>
-                    <div style="font-size:12px; color:#999; margin-top:10px;">5 de julio de 2026</div>
+            <div class="noticia-item">
+                <div class="img-placeholder">🎉</div>
+                <div class="body">
+                    <h4>Fiesta del socio 2026</h4>
+                    <p>Gran celebración con sorteos, música y actividades para toda la familia.</p>
+                    <div class="fecha">5 de julio de 2026</div>
                 </div>
             </div>
-            <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-                <div style="height:160px; background:#ddd; display:flex; align-items:center; justify-content:center; font-size:40px; color:#888;">🏆</div>
-                <div style="padding:20px;">
-                    <h4 style="font-family:'Montserrat',sans-serif;">Campeones de la liga regional</h4>
-                    <p style="color:#666; font-size:14px;">Nuestro equipo de vóley femenino se coronó campeón.</p>
-                    <div style="font-size:12px; color:#999; margin-top:10px;">28 de junio de 2026</div>
+            <div class="noticia-item">
+                <div class="img-placeholder">🏆</div>
+                <div class="body">
+                    <h4>Campeones de la liga regional</h4>
+                    <p>Nuestro equipo de vóley femenino se coronó campeón invicto.</p>
+                    <div class="fecha">28 de junio de 2026</div>
                 </div>
             </div>
         </div>
@@ -596,28 +810,40 @@
         <p>Estamos preparando nuevos desafíos. ¡Pronto más información!</p>
     </section>
 
-    <!-- ========== CONTACTO ========== -->
-    <section class="contacto-section" id="contacto">
+    <!-- ========== CONTACTO (NUEVO DISEÑO ESTILO OLIMPIA) ========== -->
+    <section class="contacto-olimpia" id="contacto">
         <h2 class="section-title" style="margin-bottom:10px;">Contacto</h2>
-        <p class="section-subtitle" style="margin-bottom:30px;">Estamos en Areguá - Valle Pucú</p>
+        <p class="section-subtitle" style="margin-bottom:30px;">Canales oficiales del Club 24 de Septiembre</p>
 
         <div class="grid">
-            <div class="item">
-                <div class="icon">📍</div>
-                <p><strong>Dirección</strong><br />Mariscal Francisco Solano López, calle 24 de Setiembre</p>
-            </div>
+            <!-- Correo electrónico -->
             <div class="item">
                 <div class="icon">✉️</div>
-                <p><strong>Correo</strong><br />club.24desetiembre1914@gmail.com</p>
+                <div class="titulo">Correo electrónico</div>
+                <p class="correo-item">club.24desetiembre1914@gmail.com</p>
+                <p class="correo-item">prensa@club24.com.py</p>
+                <p style="margin-top:10px;"><i class="fab fa-whatsapp" style="font-size:24px; color:#25D366;"></i> <span style="font-weight:500;">+595 981 234-567</span></p>
             </div>
+
+            <!-- Redes Sociales -->
             <div class="item">
                 <div class="icon">🌐</div>
-                <p><strong>Redes Sociales</strong></p>
+                <div class="titulo">Redes Sociales</div>
                 <div class="social">
-                    <a href="#" target="_blank" title="Facebook">📘</a>
-                    <a href="#" target="_blank" title="Instagram">📸</a>
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
-                <p style="font-size:12px; color:#999; margin-top:5px;">@24deset (Instagram)</p>
+                <p style="margin-top:10px; font-size:13px; color:#888;">@24deset (Instagram)</p>
+                <p style="font-size:13px; color:#888;">/Club24Setiembre (Facebook)</p>
+            </div>
+
+            <!-- Dirección -->
+            <div class="item">
+                <div class="icon">📍</div>
+                <div class="titulo">Dirección</div>
+                <p>Mariscal Francisco Solano López, calle 24 de Setiembre</p>
+                <p style="font-weight:500; margin-top:5px;">Areguá - Valle Pucú</p>
+                <p style="font-size:13px; color:#888;">Paraguay</p>
             </div>
         </div>
     </section>
@@ -646,7 +872,6 @@
         menuToggle.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu);
 
-        // Cerrar menú al hacer clic en un enlace
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 if (navMenu.classList.contains('open')) {
